@@ -53,6 +53,18 @@ npm run dev
 2. Acesse o projeto no navegador:
 - O projeto estará disponível em `http://localhost:5173`
 
+## Testes
+
+Para executar os testes dos componentes:
+
+```bash
+npm test
+```
+Ou para executar testes específicos:
+```bash
+npm test src/components/__tests__/LoginForm.test.js
+```
+
 ## Funcionalidades
 
 ### 1. Formulário de Cadastro

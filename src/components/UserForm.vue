@@ -100,8 +100,8 @@ function handleSubmit() {
 
         <div class="form-row">
             <div class="form-group">
-                <label for="numero">*Cidade:</label>
-                <input id="numero" v-model="formData.cidade" type="text">
+                <label for="cidade">*Cidade:</label>
+                <input id="cidade" v-model="formData.cidade" type="text">
             </div>
             <div class="form-group">
                 <label for="estado">*Estado:</label>

@@ -1,5 +1,6 @@
 <script setup>
 import { useUserStore } from '../stores/userStore'
+import { computed } from 'vue'
 import { Pie } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } from 'chart.js'
 
@@ -7,7 +8,7 @@ ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 
 const userStore = useUserStore()
 
-const stateChartData = {
+const stateChartData = computed(() => ({
   labels: Object.keys(userStore.getUsersByState),
   datasets: [{
     backgroundColor: [
@@ -16,15 +17,15 @@ const stateChartData = {
     ],
     data: Object.values(userStore.getUsersByState)
   }]
-}
+}))
 
-const originChartData = {
+const originChartData = computed(() => ({
   labels: ['Digital', 'Físico'],
   datasets: [{
     backgroundColor: ['#36A2EB', '#FF6384'],
     data: [userStore.getUsersByOrigin.digital, userStore.getUsersByOrigin.fisico]
   }]
-}
+}))
 
 const chartOptions = {
   responsive: true,
